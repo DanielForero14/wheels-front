@@ -1,0 +1,336 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fugaz One', cursive !important;
+}
+
+/* Background */
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #2f5061, #193628);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Main Container */
+.main-container {
+    width: 90%;
+    max-width: 500px;
+    overflow-y: auto;
+    /* Permite desplazamiento vertical */
+    overflow-x: hidden;
+    /* Oculta desplazamiento horizontal */
+
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #2f5061, #193628);
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: white;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color:  #2A557B;
+    color: white;
+    border-radius: 10px;    
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.menu-icon,
+.user-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+header h1 {
+    font-size: 18px;
+}
+
+header span {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+/* Menu Styling */
+.menu {
+    position: fixed;
+    top: 0;
+    background: linear-gradient(to bottom right, #2f5061, #193628);
+    width: 250px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    color: white;
+    z-index: 1000;
+    box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.5);
+    padding-top: 30px;
+    overflow-y: auto;
+    /* Permite desplazamiento en el menú si es necesario */
+}
+
+.menu.active {
+    transform: translateX(0);
+}
+
+.left-menu {
+    left: 0;
+}
+
+.right-menu {
+    right: 0;
+    transform: translateX(100%);
+}
+
+/* Menu List */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu ul li span {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.menu .actions {
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Button Styling */
+.menu .actions button {
+    background-color:  #2A557B;;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.menu .actions button:hover {
+    background-color:  #2A557B;;
+}
+
+
+
+header h1 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+.header-icons {
+    font-size: 20px;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+/* Estilos para la tarjeta de reserva */
+.view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    /* Limita el ancho máximo para darle una apariencia de tarjeta */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.view h3 {
+    margin-bottom: 15px;
+    color:  #2A557B;;
+}
+
+.reservation-details p {
+    margin: 5px 0;
+}
+
+.cancel-btn {
+    background-color: #8b0f01;
+    /* Color rojo para el botón de cancelar */
+    color: white;
+    border: none;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.cancel-btn:hover {
+    background-color: #c0392b;
+    /* Color más oscuro al hacer hover */
+}
+
+/* Estilos para el modal de confirmación */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo oscuro transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.modal p {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color:  #2A557B;;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.confirm-btn {
+    background-color: #358511;
+    /* Verde de confirmación */
+    color: #fff;
+    border: none;
+    margin-right: 16px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.confirm-btn:hover {
+    background-color: #4cae4c;
+}
+
+.deny-btn {
+    background-color: #8b0f01;
+    margin-left: 16px;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.deny-btn:hover {
+    background-color: #c9302c;
+}
+
+/* Estilos para el mensaje de éxito */
+#cancel-success .checkmark {
+    font-size: 30px;
+    color: #5cb85c;
+    margin-top: 10px;
+}
+
+#cancel-success .modal-content {
+    border-top-color: #5cb85c;
+    /* Verde de éxito */
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+/* Media Query for Mobile */
+@media (max-width: 500px) {
+
+    .main-container header {
+        margin-top: 15px;
+    }
+    
+    .main-container {
+        width: 100%;
+        padding: 15px;
+        height: 100%;
+    }
+    .menu {
+        width: 90%;
+    }
+    .logo {
+        width: 100px;
+        height: 70px;
+    }
+    .view{
+    margin-top: 25px;
+    }
+}

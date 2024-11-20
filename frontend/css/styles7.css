@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Fugaz One', cursive;
+    background: linear-gradient(to bottom right, #2f5061, #193628);
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.card-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #358511;
+    padding: 10px;
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu-icon, .user-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+header h1 {
+    font-size: 18px;
+}
+
+header span {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+.car-image {
+    background-color: #358511;
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
+    color: #fff;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.car-image img {
+    width: 150px;
+    height: auto;
+}
+
+.license-plate {
+    background-color: #FFD700;
+    color: #333;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -10px; /* Ajusta la posición vertical para que se superponga a la imagen */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.action {
+    text-align: center;
+}
+
+.action span {
+    font-size: 24px;
+}
+
+.action p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+
+.menu {
+    position: fixed;
+    top: 0;
+    background: linear-gradient(to bottom right, #2f5061, #193628);
+    width: 250px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    color: white;
+    z-index: 1000;
+    box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.5);
+    padding-top: 30px;
+}
+
+.menu.active {
+    transform: translateX(0);
+}
+
+.left-menu {
+    left: 0;
+}
+
+.right-menu {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu ul li span {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.menu .actions {
+    display: flex;
+    flex-direction: column; /* Coloca los botones en columna */
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    gap: 10px; /* Añade un espacio entre los botones */
+}
+
+.menu .actions button {
+    background-color: #4CAF50;
+    font-family: 'Fugaz One', cursive;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0; /* Elimina el margen superior individual */
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+
+.menu .actions button:hover {
+    background-color: #45a049;
+}
+
+
+.show {
+    transform: translateX(0);
+}
+
+@media (max-width: 500px) {
+    .car-image img {
+        width: 120px;
+    }
+    
+    .menu {
+        width: 90%;
+    }
+    
+    .card-container {
+        width: 100%; /* Cambia el ancho al 100% en pantallas pequeñas */
+        padding: 15px;
+        height: 100%;
+    }
+    .car-image{
+        padding-bottom: 75px;
+    }
+}
+
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Pasajero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles10.css">
+</head>
+
+<body>
+    <div class="background">
+        <div class="main-container">
+            <!-- Encabezado -->
+            <header>
+                <div class="menu-icon" onclick="toggleMenu('navMenu')">☰</div>
+                <h1>WHEELS <span>Pasajero</span></h1>
+                <div class="user-icon" onclick="toggleMenu('userMenu')">👤</div>
+            </header>
+
+            <!-- Nav Menu -->
+            <aside id="navMenu" class="menu left-menu">
+                <ul>
+                    <li><span>🧍</span> Conductor</li>
+                    <li><span>📅</span> Mis Viajes</li>
+                    <li><span>🚗</span> Nuevo Viaje</li>
+                    <li><span>🏠</span> Home</li>
+                </ul>
+            </aside>
+
+            <!-- User Menu -->
+            <aside id="userMenu" class="menu right-menu">
+                <ul>
+                    <li><span>👤</span> Nombre de usuario</li>
+                    <li><span>✉️</span> Correo del usuario</li>
+                    <li><span>📞</span> Teléfono</li>
+                    <li><span>🎓</span> ID Universitario</li>
+                    <li><span>🚗</span> Info Carro</li>
+                </ul>
+                <div class="actions">
+                    <button>Editar Datos</button>
+                    <button>Cerrar Sesión</button>
+                </div>
+            </aside>
+
+            <!-- Vista de Reservas del Pasajero -->
+            <div id="reservation-view" class="view">
+                <div>
+                    <h3>Mis Reservas</h3>
+                </div>
+                <div class="reservation-details">
+                    <p><strong>Ruta:</strong> Calle 150 a Universidad Sabana</p>
+                    <p><strong>Fecha:</strong> 15/10/2023</p>
+                    <p><strong>Hora:</strong> 16:00</p>
+                    <p><strong>Asiento:</strong> A04</p>
+                    <p><strong>Placa del carro:</strong> ABC 555</p>
+                </div>
+                <button class="cancel-btn" onclick="showCancelConfirmation()">Cancelar</button>
+            </div>
+
+            <!-- Confirmación de Cancelación -->
+            <div id="cancel-confirmation" class="modal hidden">
+                <div class="modal-content">
+                    <p>¿Estás seguro de tu Cancelación?</p>
+                    <div class="modal-buttons">
+                        <button class="confirm-btn" onclick="confirmCancellation()">Sí</button>
+                        <button class="deny-btn" onclick="closeModal()">No</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mensaje de Cancelación Exitosa -->
+            <div id="cancel-success" class="modal hidden">
+                <div class="modal-content">
+                    <p>Fue cancelado con éxito</p>
+                    <span class="checkmark">✔️</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script10.js"></script>
+</body>
+
+</html>
